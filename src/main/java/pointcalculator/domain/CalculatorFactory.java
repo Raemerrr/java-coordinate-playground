@@ -11,6 +11,9 @@ public class CalculatorFactory {
         if (points.size() == RectangleCalculator.RECTANGLE_POINT_SIZE) {
             return new RectangleCalculator(points);
         }
+        if (points.size() == TriangleCalculator.TRIANGLE_POINT_SIZE) {
+            return new TriangleCalculator(points);
+        }
         throw new IllegalArgumentException("계산을 지원하지 않는 형식입니다.");
     }
 }
