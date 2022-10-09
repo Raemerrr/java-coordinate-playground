@@ -14,7 +14,6 @@ public class InputView {
     private static final String USER_INPUT_DELIMITER = "-";
     private static final String POINT_FORMAT_REGEX = "\\([0-9]+,[0-9]+\\)";
     private static final String POINT_DELIMITER = ",";
-    private static final CalculatorFactory factory = new CalculatorFactory();
 
     public static Calculator userPoint() {
         System.out.println("좌표를 입력하세요.");
@@ -22,7 +21,7 @@ public class InputView {
         List<Point> points = splitData.stream()
                 .map(InputView::parsePoint)
                 .collect(Collectors.toList());
-        return factory.createCalculator(points);
+        return CalculatorFactory.create(points);
     }
 
     private static List<String> splitUserInput(final String input) {
