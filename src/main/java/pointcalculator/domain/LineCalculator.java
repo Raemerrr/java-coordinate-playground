@@ -18,6 +18,11 @@ public class LineCalculator implements Calculator {
         return Math.sqrt(Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
     }
 
+    @Override
+    public void printResult(final double result) {
+        System.out.println("두 점 사이 거리는 " + String.format("%.6f", result));
+    }
+
     private void validatePointsSize(final List<Point> points) {
         if (points.size() != LINE_POINT_SIZE) {
             throw new IllegalArgumentException("올바른 선 길이 계산 형식이 아닙니다.");
